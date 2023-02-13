@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>svcadmin</id>
+    <version>1.00.001</version>
+    <title>Service Administrator</title>
+    <!-- <packageSourceUrl>https://rsdn.org/article/baseserv/svcadmin-1/svcadsrc.zip</packageSourceUrl> -->
+    <authors>The RSDN Group</authors>
+    <owners>chocolatey-community, Vasilii Strelok</owners>    
+    <projectUrl>https://rsdn.org/article/baseserv/svcadmin-1.xml</projectUrl>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Improved display of windows system services. You can view the execution path and other details in the application table.</description>
+    <summary>Improved display of windows system services</summary>
+    <tags>svcadmin services</tags>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.3.3" />
+    </dependencies>
+  </metadata>
+  <files>
+	  <file src="tools\**" target="tools" />
+  </files>
+</package>

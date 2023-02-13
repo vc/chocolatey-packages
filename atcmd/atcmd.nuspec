@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>atcmd</id>
+    <version>2.1.313</version>
+    <title>ATcmd of Advanced Training</title>
+    <!-- <packageSourceUrl>https://rsdn.org/article/baseserv/svcadmin-1/svcadsrc.zip</packageSourceUrl> -->
+    <authors>Advanced Training</authors>
+    <owners>chocolatey-community, Vasilii Strelok</owners>    
+    <projectUrl>https://www.atraining.ru/soft/</projectUrl>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This utility will be needed for convenient management of low-level Windows settings. Most of its functions are related to security or to the network subsystem. We use ATcmd for courses and consulting that can't be done freely through the standard Windows interface.</description>
+    <summary>This utility will be needed for convenient management of low-level Windows settings.</summary>
+    <tags>atcmd windows tuning</tags>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.3.3" />
+    </dependencies>
+  </metadata>
+  <files>
+	  <file src="tools\**" target="tools" />
+  </files>
+</package>
