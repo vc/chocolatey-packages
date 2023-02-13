@@ -4,7 +4,7 @@
     <id>svcadmin</id>
     <version>1.00.001</version>
     <title>Service Administrator</title>
-    <!-- <packageSourceUrl>https://rsdn.org/article/baseserv/svcadmin-1/svcadsrc.zip</packageSourceUrl> -->
+    <packageSourceUrl>https://github.com/vc/chocolatey-packages/tree/main/svcadmin</packageSourceUrl>
     <authors>The RSDN Group</authors>
     <owners>chocolatey-community, Vasilii Strelok</owners>    
     <projectUrl>https://rsdn.org/article/baseserv/svcadmin-1.xml</projectUrl>    

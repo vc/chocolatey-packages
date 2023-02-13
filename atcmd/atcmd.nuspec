@@ -4,7 +4,7 @@
     <id>atcmd</id>
     <version>2.1.313</version>
     <title>ATcmd of Advanced Training</title>
-    <!-- <packageSourceUrl>https://rsdn.org/article/baseserv/svcadmin-1/svcadsrc.zip</packageSourceUrl> -->
+    <packageSourceUrl>https://github.com/vc/chocolatey-packages/tree/main/atcmd</packageSourceUrl>
     <authors>Advanced Training</authors>
     <owners>chocolatey-community, Vasilii Strelok</owners>    
     <projectUrl>https://www.atraining.ru/soft/</projectUrl>    
