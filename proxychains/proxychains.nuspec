@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>proxychains</id>
+    <version>0.6.8</version>
+    <title>Proxychains for Windows</title>
+    <packageSourceUrl>https://github.com/vc/chocolatey-packages/tree/main/proxychains</packageSourceUrl>
+    <authors>Shun Zi</authors>
+    <owners>chocolatey-community, Vasilii Strelok</owners>
+    <projectUrl>https://github.com/shunf4/proxychains-windows</projectUrl>
+    <licenseUrl>https://github.com/shunf4/proxychains-windows/blob/master/COPYING</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Windows and Cygwin port of proxychains. It routes TCP traffic through SOCKS5 proxies by hijacking Winsock functions via DLL injection.</description>
+    <summary>Proxychains for Windows - route TCP through SOCKS5</summary>
+    <docsUrl>https://github.com/shunf4/proxychains-windows</docsUrl>
+    <tags>proxychains proxy socks windows cygwin networking</tags>
+    <dependencies>
+      <dependency id="vcredist2015" version="14.0.24120" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
