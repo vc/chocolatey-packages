@@ -55,7 +55,8 @@ Routes TCP traffic through SOCKS5 proxies by hijacking Winsock functions via DLL
 
 ## Installation specifics
 
-- Files are renamed: `proxychains.exe`, `proxychains_helper.exe`, `proxychains_hook.dll`
+- EXE files are renamed: `proxychains.exe`, `proxychains_helper.exe`
+- DLL file keeps original name (e.g., `proxychains_hook_win32_x64.dll`)
 - DLL folder is added to system PATH (Machine level)
 - Shim files created for `proxychains.exe` and `proxychains_helper.exe`
 

@@ -44,11 +44,9 @@ Install-ChocolateyZipPackage @packageArgs
 if ($cygwinDetected) {
     Rename-Item "$installDir\proxychains_cygwin_x64.exe" "proxychains.exe" -ErrorAction SilentlyContinue
     Rename-Item "$installDir\proxychains_helper_cygwin_x64.exe" "proxychains_helper.exe" -ErrorAction SilentlyContinue
-    Rename-Item "$installDir\cygproxychains_hook_x64.dll" "proxychains_hook.dll" -ErrorAction SilentlyContinue
 } else {
     Rename-Item "$installDir\proxychains_win32_x64.exe" "proxychains.exe" -ErrorAction SilentlyContinue
     Rename-Item "$installDir\proxychains_helper_win32_x64.exe" "proxychains_helper.exe" -ErrorAction SilentlyContinue
-    Rename-Item "$installDir\proxychains_hook_win32_x64.dll" "proxychains_hook.dll" -ErrorAction SilentlyContinue
 }
 
 $currentPath = [Environment]::GetEnvironmentVariable('PATH', 'Machine')
