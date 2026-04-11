@@ -1,12 +1,13 @@
 # Chocolatey Packages
 
-This repo contains three Chocolatey packages.
+This repo contains four Chocolatey packages.
 
 ## Packages
 
 - `atcmd/` - Advanced Training Windows utility (v2.1.313)
 - `svcadmin/` - Service Administrator (v1.00.001)
 - `proxychains/` - Proxychains for Windows (v0.6.8)
+- `apt-cyg/` - apt-get like tool for Cygwin (fork by kou1okada)
 
 ## Structure
 
@@ -22,6 +23,7 @@ Each package has:
 choco pack atcmd/atcmd.nuspec
 choco pack svcadmin/svcadmin.nuspec
 choco pack proxychains/proxychains.nuspec
+choco pack apt-cyg/apt-cyg.nuspec
 
 # Install local package
 choco install <package> -s . --force
@@ -63,3 +65,30 @@ Routes TCP traffic through SOCKS5 proxies by hijacking Winsock functions via DLL
 ## Uninstall specifics
 
 - Removes DLL folder from system PATH
+
+---
+
+# apt-cyg-specific
+
+## What it is
+
+apt-get like tool for Cygwin (fork by kou1okada). Allows installing Cygwin packages from command line without cygwin setup GUI.
+
+## Source
+
+- GitHub: https://github.com/kou1okada/apt-cyg
+- Fork of: https://github.com/transcode-open/apt-cyg
+
+## Requirements
+
+- Cygwin must be installed
+- Required Cygwin packages: `wget`, `ca-certificates`, `gnupg`, `libiconv` (warnings shown if missing)
+
+## Installation specifics
+
+- Script installed to `$cygwinRoot/bin/apt-cyg` via `bash install` command
+- Executable permissions set automatically
+
+## Version
+
+- Format: YYYY.MM.DD (date of last commit)
