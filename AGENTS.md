@@ -1,6 +1,6 @@
 # Chocolatey Packages
 
-This repo contains four Chocolatey packages.
+This repo contains five Chocolatey packages.
 
 ## Packages
 
@@ -8,6 +8,7 @@ This repo contains four Chocolatey packages.
 - `svcadmin/` - Service Administrator (v1.00.001)
 - `proxychains/` - Proxychains for Windows (v0.6.8)
 - `apt-cyg/` - apt-get like tool for Cygwin (fork by kou1okada)
+- `gossip/` - Nostr client (v0.14.0)
 
 ## Structure
 
@@ -24,6 +25,7 @@ choco pack atcmd/atcmd.nuspec
 choco pack svcadmin/svcadmin.nuspec
 choco pack proxychains/proxychains.nuspec
 choco pack apt-cyg/apt-cyg.nuspec
+choco pack gossip/gossip.nuspec
 
 # Install local package
 choco install <package> -s . --force
@@ -37,6 +39,9 @@ choco push <package>.nupkg -s https://push.chocolatey.org/
 1. Update `<version>` in `.nuspec`
 2. Update `checksum` in `tools/chocolateyinstall.ps1` (download file and run `Get-FileHash`)
 3. Update URL if version changed
+
+## Check choco package exists
+- Get url to check for package already exists `https://push.chocolatey.org/packages/${package}/` 
 
 ---
 
@@ -92,3 +97,25 @@ apt-get like tool for Cygwin (fork by kou1okada). Allows installing Cygwin packa
 ## Version
 
 - Format: YYYY.MM.DD (date of last commit)
+
+---
+
+# gossip-specific
+
+## What it is
+
+Gossip is a desktop client for the Nostr protocol (open social media).
+
+## Source
+
+- GitHub: https://github.com/mikedilger/gossip
+
+## Version
+
+- Format: 0.14.0 (semver from GitHub releases)
+
+## Installation specifics
+
+- MSI installer from GitHub releases
+- No additional dependencies required (self-contained)
+- Uses AutoUninstaller for removal (no chocolateyuninstall.ps1 needed)

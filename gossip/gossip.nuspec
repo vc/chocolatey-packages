@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>gossip</id>
+    <version>0.14.0</version>
+    <title>Gossip - Nostr Client</title>
+    <packageSourceUrl>https://github.com/vc/chocolatey-packages/tree/main/gossip</packageSourceUrl>
+    <authors>Mike Dilger</authors>
+    <owners>chocolatey-community, Vasilii Strelok</owners>
+    <projectUrl>https://github.com/mikedilger/gossip</projectUrl>
+    <licenseUrl>https://github.com/mikedilger/gossip/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Gossip is a desktop client for NOSTR. Nostr is an open social media protocol empowering lots of software such as this client. The experience is kind of like Twitter except that you control your own account, and you can post to many different independent places called relays.
+
+Gossip runs on Windows, macOS and Linux. It features secure key handling, high user control, and privacy options including Tor support.</description>
+    <summary>A desktop client for the Nostr protocol.</summary>
+    <tags>nostr socialmedia chat desktop client</tags>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
