@@ -13,6 +13,9 @@
     <description>Apt-cyg is a command-line installer for Cygwin which cooperates with Cygwin Setup and uses the same repository. The syntax is similar to apt-get.</description>
     <summary>apt-get like tool for Cygwin</summary>
     <tags>cygwin apt package-manager</tags>
+    <dependencies>
+      <dependency id="cygwin" version="3.0.0" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

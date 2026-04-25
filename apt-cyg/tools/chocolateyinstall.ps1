@@ -31,30 +31,13 @@ if (-not $cygwinRoot -or -not (Test-Path $cygwinRoot)) {
 
 Write-Host "Cygwin root: $cygwinRoot" -ForegroundColor Cyan
 
-$binDir = Join-Path $cygwinRoot 'bin'
-$aptCygPath = Join-Path $binDir 'apt-cyg'
-
-if (-not (Test-Path $binDir)) {
-    New-Item -ItemType Directory -Path $binDir -Force | Out-Null
-}
-
-$bashExe = Join-Path $cygwinRoot 'bin\bash.exe'
-if (Test-Path $bashExe) {
-    Write-Host 'Installing apt-cyg to /bin/apt-cyg...' -ForegroundColor Cyan
-    $toolsDir = Split-Path $scriptPath -Parent
-    cd $toolsDir
-    & $bashExe -c "install ./apt-cyg /bin"
-} else {
-    throw 'Cygwin bash.exe not found at ${cygwinRoot}\bin.'
-}
-
-$requiredPackages = @('wget', 'ca-certificates', 'gnupg', 'libiconv')
+$requiredPackages = @('coreutils', 'wget', 'ca-certificates', 'gnupg', 'libiconv')
 $missingPackages = @()
 
 $installedDbPath = Join-Path $cygwinRoot 'etc\setup\installed.db'
 if (Test-Path $installedDbPath) {
     Write-Host 'Checking for required Cygwin packages...' -ForegroundColor Cyan
-    
+
     $installedDbContent = Get-Content $installedDbPath -ErrorAction SilentlyContinue
     if ($installedDbContent) {
         foreach ($pkg in $requiredPackages) {
@@ -68,9 +51,47 @@ if (Test-Path $installedDbPath) {
 }
 
 if ($missingPackages.Count -gt 0) {
-    Write-Warning "Missing packages: $($missingPackages -join ', ')"
-    Write-Warning 'These packages are required for apt-cyg to work properly.'
-    Write-Warning 'Install them via Cygwin setup or apt-cyg.'
+    Write-Host "Installing missing packages: $($missingPackages -join ', ')" -ForegroundColor Yellow
+
+    $setupExe = $null
+    $possibleSetupPaths = @(
+        (Join-Path $cygwinRoot 'cygwinsetup.exe'),
+        (Join-Path $cygwinRoot 'setup-x86_64.exe'),
+        (Join-Path $cygwinRoot 'setup-x86.exe'),
+        (Join-Path $cygwinRoot 'setup.exe')
+    )
+    foreach ($path in $possibleSetupPaths) {
+        if (Test-Path $path) {
+            $setupExe = $path
+            break
+        }
+    }
+
+    if ($setupExe) {
+        $packagesArg = $missingPackages -join ','
+        $setupArgs = "--quiet-mode --no-desktop --download --local-install --no-verify -P $packagesArg"
+
+        Write-Host "Running: $setupExe $setupArgs" -ForegroundColor Cyan
+        Start-Process -FilePath $setupExe -ArgumentList $setupArgs -Wait -WindowStyle Hidden
+    } else {
+        throw "cygwinsetup.exe not found. Cannot install missing packages: $($missingPackages -join ', ')"
+    }
+}
+
+$binDir = Join-Path $cygwinRoot 'bin'
+
+if (-not (Test-Path $binDir)) {
+    New-Item -ItemType Directory -Path $binDir -Force | Out-Null
+}
+
+$bashExe = Join-Path $cygwinRoot 'bin\bash.exe'
+if (Test-Path $bashExe) {
+    Write-Host 'Installing apt-cyg to /bin/apt-cyg...' -ForegroundColor Cyan
+    $toolsDir = Split-Path $scriptPath -Parent
+    cd $toolsDir
+    & $bashExe -c "install ./apt-cyg /bin"
+} else {
+    throw 'Cygwin bash.exe not found at ${cygwinRoot}\bin.'
 }
 
 Write-Host 'apt-cyg has been installed successfully!' -ForegroundColor Green
