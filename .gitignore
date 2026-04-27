@@ -7,3 +7,6 @@ Scripts/
 pyvenv.cfg
 *.exe
 *.zip
+
+vagrant
+opencode.json
