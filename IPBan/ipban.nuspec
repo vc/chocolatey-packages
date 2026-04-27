@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>ipban</id>
+    <version>4.0.0</version>
+    <title>IPBan - Fail2Ban for Windows</title>
+    <authors>Jeff Johnson (DigitalRuby)</authors>
+    <packageSourceUrl>https://github.com/vc/chocolatey-packages/tree/main/IPBan</packageSourceUrl>
+    <projectUrl>https://github.com/DigitalRuby/IPBan</projectUrl>
+    <licenseUrl>https://github.com/DigitalRuby/IPBan/blob/master/LICENSE.md</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+IPBan is a free, open-source security software that blocks hackers and botnets by automatically banning IP addresses that fail to authenticate multiple times.
+
+This version requires .NET 10 runtime.
+
+Supported services: RDP, OpenSSH, VNC, MySQL, SQL Server, Exchange, and more.
+Windows 10/Server 2016 or newer required.
+    </description>
+    <tags>security fail2ban firewall rdp brute-force hacking intrusion-detection</tags>
+    <copyright>2011-Present Digital Ruby, LLC</copyright>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
