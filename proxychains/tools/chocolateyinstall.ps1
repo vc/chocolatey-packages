@@ -49,7 +49,4 @@ if ($cygwinDetected) {
     Rename-Item "$installDir\proxychains_helper_win32_x64.exe" "proxychains_helper.exe" -ErrorAction SilentlyContinue
 }
 
-$currentPath = [Environment]::GetEnvironmentVariable('PATH', 'Machine')
-$newPath = if ($currentPath -ne $null) { "$currentPath;$installDir" } else { $installDir }
-[Environment]::SetEnvironmentVariable('PATH', $newPath, 'Machine')
-$env:Path = "$env:Path;$installDir"
+Install-ChocolateyPath -PathToInstall $installDir -Scope 'Machine'
