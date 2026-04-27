@@ -31,7 +31,7 @@ if (-not $cygwinRoot -or -not (Test-Path $cygwinRoot)) {
 
 Write-Host "Cygwin root: $cygwinRoot" -ForegroundColor Cyan
 
-$requiredPackages = @('coreutils', 'wget', 'ca-certificates', 'gnupg', 'libiconv')
+$requiredPackages = @('wget', 'ca-certificates', 'gnupg', 'libiconv')
 $missingPackages = @()
 
 $installedDbPath = Join-Path $cygwinRoot 'etc\setup\installed.db'
@@ -69,10 +69,10 @@ if ($missingPackages.Count -gt 0) {
 
     if ($setupExe) {
         $packagesArg = $missingPackages -join ','
-        $setupArgs = "--quiet-mode --no-desktop --download --local-install --no-verify -P $packagesArg"
+        $setupArgs = "--quiet-mode --no-desktop --no-startmenu --download --local-install --no-verify -P $packagesArg"
 
         Write-Host "Running: $setupExe $setupArgs" -ForegroundColor Cyan
-        Start-Process -FilePath $setupExe -ArgumentList $setupArgs -Wait -WindowStyle Hidden
+        Start-Process -FilePath $setupExe -ArgumentList $setupArgs -Wait -WindowStyle Minimized
     } else {
         throw "cygwinsetup.exe not found. Cannot install missing packages: $($missingPackages -join ', ')"
     }
@@ -87,9 +87,9 @@ if (-not (Test-Path $binDir)) {
 $bashExe = Join-Path $cygwinRoot 'bin\bash.exe'
 if (Test-Path $bashExe) {
     Write-Host 'Installing apt-cyg to /bin/apt-cyg...' -ForegroundColor Cyan
-    $toolsDir = Split-Path $scriptPath -Parent
-    cd $toolsDir
-    & $bashExe -c "install ./apt-cyg /bin"
+    $targetPath = Join-Path $cygwinRoot 'bin\apt-cyg'
+    Copy-Item -Path $scriptPath -Destination $targetPath -Force
+    & $bashExe -c "/bin/chmod +x /bin/apt-cyg"
 } else {
     throw 'Cygwin bash.exe not found at ${cygwinRoot}\bin.'
 }
