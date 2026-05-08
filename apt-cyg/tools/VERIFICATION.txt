@@ -1,0 +1,19 @@
+VERIFICATION INSTRUCTIONS
+=======================
+
+The apt-cyg script embedded in this package can be verified by following these steps:
+
+1. Download the original script from the official repository at the specific commit:
+   https://raw.githubusercontent.com/kou1okada/apt-cyg/28cc56ae7b559785d78c80340435b267292d0285/apt-cyg
+
+2. Calculate the SHA256 hash of the downloaded file using PowerShell:
+   Get-FileHash -Path apt-cyg -Algorithm SHA256
+
+3. Compare the calculated hash with the expected hash below:
+
+   SHA256: 28E99C11F6E50390D3E0D3B774C46B80D586B61695B9EC08E0EDD957DE7EA0F6
+
+4. If the hashes match, the embedded file is identical to the original.
+
+Commit: 28cc56ae7b559785d78c80340435b267292d0285
+Package Source URL: https://github.com/kou1okada/apt-cyg

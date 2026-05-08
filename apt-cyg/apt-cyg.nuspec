@@ -3,15 +3,19 @@
   <metadata>
     <id>apt-cyg</id>
     <version>2025.09.03</version>
-    <title>apt-cyg</title>
+    <title>apt-cyg - Apt-get like package manager for Cygwin</title>
     <packageSourceUrl>https://github.com/vc/chocolatey-packages/tree/main/apt-cyg</packageSourceUrl>
     <authors>kou1okada</authors>
     <owners>Vasilii Strelok</owners>
     <projectUrl>https://github.com/kou1okada/apt-cyg</projectUrl>
+    <projectSourceUrl>https://github.com/kou1okada/apt-cyg</projectSourceUrl>
+    <bugTrackerUrl>https://github.com/kou1okada/apt-cyg/issues</bugTrackerUrl>
+    <docsUrl>https://github.com/kou1okada/apt-cyg</docsUrl>
     <licenseUrl>https://github.com/kou1okada/apt-cyg/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Apt-cyg is a command-line installer for Cygwin which cooperates with Cygwin Setup and uses the same repository. The syntax is similar to apt-get.</description>
     <summary>apt-get like tool for Cygwin</summary>
+    <releaseNotes>https://github.com/kou1okada/apt-cyg/releases</releaseNotes>
     <tags>cygwin apt package-manager</tags>
     <dependencies>
       <dependency id="cygwin" version="3.0.0" />

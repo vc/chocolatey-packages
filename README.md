@@ -84,12 +84,19 @@ apt-get like tool for Cygwin (fork by kou1okada).
 
 **Version**: 2025.9.3
 
-**Requirements**: Cygwin, `coreutils`, `wget`, `ca-certificates`, `gnupg`, `libiconv`
+**Requirements**: Cygwin, `wget`, `ca-certificates`, `gnupg`, `libiconv`
+
+**Package metadata**:
+- `projectSourceUrl`: https://github.com/kou1okada/apt-cyg
+- `bugTrackerUrl`: https://github.com/kou1okada/apt-cyg/issues
+- `docsUrl`: https://github.com/kou1okada/apt-cyg
+- `license`: MIT (included as LICENSE.txt)
+
+**Verification**: The embedded script is verified against a specific commit (`28cc56ae`). See `tools/VERIFICATION.txt` for instructions.
 
 **Installation specifics**:
 - Automatically installs missing Cygwin packages via `cygwinsetup.exe`
 - Installs apt-cyg script to `/bin/apt-cyg`
-- Requires `coreutils` for the `install` command
 
 ---
 
