@@ -6,12 +6,12 @@ This repository contains Chocolatey packages for Windows.
 
 | Package | Description | Version |
 |---------|-------------|---------|
-| `atcmd/` | Advanced Training Windows utility | 2.1.313 |
-| `svcadmin/` | Service Administrator | 1.00.001 |
-| `proxychains/` | Proxychains for Windows | 0.6.8 |
-| `apt-cyg/` | apt-get like tool for Cygwin | 2025.9.3 |
-| `gossip/` | Nostr client | 0.14.0 |
-| `ipban/` | Fail2Ban for Windows | 4.0.0-prerelease |
+| [atcmd](https://community.chocolatey.org/packages/atcmd) | Advanced Training Windows utility | 2.1.313 |
+| [svcadmin](https://community.chocolatey.org/packages/svcadmin) | Service Administrator | 1.00.001 |
+| [proxychains](https://community.chocolatey.org/packages/proxychains) | Proxychains for Windows | 0.6.8 |
+| [apt-cyg](https://community.chocolatey.org/packages/apt-cyg) | apt-get like tool for Cygwin | 2025.9.3 |
+| [gossip](https://community.chocolatey.org/packages/gossip) | Nostr client | 0.14.0 |
+| [ipban](https://community.chocolatey.org/packages/ipban) | Fail2Ban for Windows | 4.0.0 |
 
 ## Quick Start
 
@@ -43,7 +43,7 @@ Each package has:
 
 **Description**: Free, open-source security software that blocks hackers and botnets by automatically banning IP addresses that fail to authenticate multiple times.
 
-**Version**: 4.0.0-prerelease (.NET 10 required)
+**Version**: 4.0.0 (.NET 10 required)
 
 **Supported services**: RDP, OpenSSH, VNC, MySQL, SQL Server, Exchange, and more.
 
