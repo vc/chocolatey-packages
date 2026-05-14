@@ -5,10 +5,14 @@
     <version>4.0.0</version>
     <title>IPBan - Fail2Ban for Windows</title>
     <authors>Jeff Johnson (DigitalRuby)</authors>
+    <owners>strelok.vc</owners>
     <packageSourceUrl>https://github.com/vc/chocolatey-packages/tree/main/IPBan</packageSourceUrl>
     <projectUrl>https://github.com/DigitalRuby/IPBan</projectUrl>
+    <projectSourceUrl>https://github.com/DigitalRuby/IPBan</projectSourceUrl>
+    <bugTrackerUrl>https://github.com/DigitalRuby/IPBan/issues</bugTrackerUrl>
     <licenseUrl>https://github.com/DigitalRuby/IPBan/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Free security software to block hackers and botnets by banning failed login IPs</summary>
     <description>
 IPBan is a free, open-source security software that blocks hackers and botnets by automatically banning IP addresses that fail to authenticate multiple times.
 
