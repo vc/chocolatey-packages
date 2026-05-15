@@ -121,20 +121,12 @@ Advanced Training Windows utility.
 **Version**: 2.1.313
 
 **Requirements**:
-- Windows with TLS 1.3 support (Server 2022+, Windows 11, or Windows 10 with updates)
-- `curl` package (used for TLS 1.3 download)
 - `kb2999226` (Universal C Runtime)
 - `vcredist2017` (Visual C++ 2017)
 
 **Installation specifics**:
-- Downloads ZIP from `cdn.atraining.ru`
-- Uses `curl` for download due to TLS 1.3 requirement (Windows SChannel TLS fails on older systems)
-
-**Known issue**: The download server (`cdn.atraining.ru`) requires TLS 1.3. Windows SChannel (used by PowerShell/Invoke-WebRequest) has limited TLS 1.3 support on Windows 10. The package uses `curl` (which uses LibreSSL/OpenSSL) as a workaround.
-
-**If installation fails with SSL/TLS error**:
-1. Ensure `curl` is installed: `choco install curl`
-2. Or update Windows to enable TLS 1.3 support
+- Downloads ZIP from `cdn.atraining.ru` and extracts to Chocolatey tools directory
+- Requires TLS 1.2 (enforced in install script)
 
 ---
 
