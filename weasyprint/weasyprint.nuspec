@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>weasyprint</id>
+    <version>69.0.0</version>
+    <title>WeasyPrint</title>
+    <packageSourceUrl>https://github.com/vc/chocolatey-packages/tree/main/weasyprint</packageSourceUrl>
+    <authors>Guillaume Ayoub (Kozea)</authors>
+    <owners>Vasilii Strelok</owners>
+    <projectUrl>https://github.com/Kozea/WeasyPrint</projectUrl>
+    <docsUrl>https://doc.courtbouillon.org/weasyprint</docsUrl>
+    <bugTrackerUrl>https://github.com/Kozea/WeasyPrint/issues</bugTrackerUrl>
+    <licenseUrl>https://github.com/Kozea/WeasyPrint/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The Awesome Document Factory. WeasyPrint is a smart solution helping web developers to create PDF documents. It turns simple HTML pages into gorgeous statistical reports, invoices, tickets… This package installs the portable Windows version.</description>
+    <summary>The awesome document factory - HTML to PDF converter</summary>
+    <releaseNotes>https://github.com/Kozea/WeasyPrint/releases/tag/v69.0</releaseNotes>
+    <tags>pdf html css converter weasyprint document</tags>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

@@ -172,6 +172,10 @@ Read `TEST.md`
 choco push <package>.nupkg -s https://push.chocolatey.org/
 ```
 
+## Uninstall Script
+
+`chocolateyuninstall.ps1` is **not required** for packages that use `Install-ChocolateyZipPackage` extracting to `$toolsDir`. Chocolatey docs state: *"Not necessary if files are unzipped to package directory"* — Chocolatey automatically removes the entire package directory on `choco uninstall`. An uninstall script is only needed when installation modifies things outside the package directory (e.g., copying to `Program Files`, installing services, creating shims).
+
 ## Updating Versions
 
 1. Update `<version>` in `.nuspec`
